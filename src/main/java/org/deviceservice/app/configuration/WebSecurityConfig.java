@@ -24,6 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception {
+
         httpSecurity.httpBasic().disable().csrf().disable()
                 .authorizeRequests().anyRequest().authenticated().and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
