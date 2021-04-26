@@ -1,7 +1,8 @@
 package org.deviceservice.app.service;
 
 import org.deviceservice.app.domain.dto.UpdateUserDataDto;
+import org.deviceservice.app.domain.dto.UserDataDto;
 
 public interface PostUserService {
-    void updateConnection(UpdateUserDataDto connectedUser);
+    UserDataDto updateConnection(UpdateUserDataDto connectedUser);
 }

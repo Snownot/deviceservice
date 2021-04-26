@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import org.deviceservice.app.domain.dto.UpdateUserDataDto;
+import org.deviceservice.app.domain.dto.UserDataDto;
 import org.deviceservice.app.service.PostUserService;
 import org.deviceservice.app.utility.RoleData;
 import org.springframework.beans.factory.annotation.Value;
@@ -46,6 +47,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         String jwtToken = null;
 
         UpdateUserDataDto connectedUser = null;
+        UserDataDto credentialUser = null;
 
         if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
             jwtToken = requestTokenHeader.substring(7);
@@ -53,10 +55,9 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         }
 
         if (connectedUser != null) {
-            postUserService.updateConnection(connectedUser);
+            credentialUser = postUserService.updateConnection(connectedUser);
         }
-        if (connectedUser != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            Jws<Claims> claims = Jwts.parserBuilder().setSigningKey(secret).build().parseClaimsJws(jwtToken);
+        if (credentialUser != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
             UserPrincipal userPrincipal = new UserPrincipal();
             userPrincipal.setUsername("unknown");

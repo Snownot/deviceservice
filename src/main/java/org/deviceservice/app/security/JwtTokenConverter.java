@@ -32,8 +32,8 @@ public class JwtTokenConverter {
             }
 
             return userDataDto;
-        } catch (Exception e) {
-            throw new RuntimeException();
+        } catch (SecurityException e) {
+            throw new SecurityException();
         }
     }
 }
