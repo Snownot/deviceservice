@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Table(name = "user_data_table")
+@Table(name = "user_data")
 public class UserData {
 
     @Id
@@ -22,12 +22,12 @@ public class UserData {
     @NotNull
     @NotEmpty
     @Column(name = "device_id")
-    private long deviceID;
+    private Long deviceId;
 
     @NotNull
     @NotEmpty
     @Column(name = "user_id")
-    private long userID;
+    private Long userId;
 
     @NotNull
     @NotEmpty

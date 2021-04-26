@@ -16,3 +16,5 @@ spring:
 server:
   port: ${SERVER_PORT:8585}
   servlet.context-path: ${CONTEXT_PATH:/api}
+
+auth.secret: JSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2
