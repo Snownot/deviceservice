@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    password: sa
+    url: jdbc:postgresql://localhost:5432/user_data
+    username: sa
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      ## SQL logging
+      #        show_sql: true
+      #        format_sql: false
+
+server:
+  port: ${SERVER_PORT:8585}
+  servlet.context-path: ${CONTEXT_PATH:/api}
