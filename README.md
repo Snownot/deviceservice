@@ -5,7 +5,7 @@
 1. Build the project: mvn clean package (a jar file is formed in the /target folder)
 2. Starting the jar: java -jar deviceservice-1.0-SNAPSHOT.jar
 
-** Environment variables**
+** configuration**
 
 1. spring.datasource.user - login to the database
 2. spring.datasource.PASSWORD - password to the database
