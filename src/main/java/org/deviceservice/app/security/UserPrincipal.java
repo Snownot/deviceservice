@@ -13,6 +13,7 @@ public class UserPrincipal implements UserDetails {
     private String username;
     private UUID id;
     private Boolean isExpired;
+    private Boolean isAdmin;
 
 
     private Collection<? extends GrantedAuthority> authorities;
