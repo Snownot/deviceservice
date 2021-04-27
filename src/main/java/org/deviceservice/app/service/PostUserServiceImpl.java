@@ -5,7 +5,7 @@ import org.deviceservice.app.domain.dto.UpdateUserDataDto;
 import org.deviceservice.app.domain.dto.UserDataDto;
 import org.deviceservice.app.domain.entity.UserData;
 import org.deviceservice.app.domain.repository.UserDataRepository;
-import org.deviceservice.app.exception.UserNotFoundException;
+import org.deviceservice.app.exception.UserFriendlyException;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +28,7 @@ public class PostUserServiceImpl implements PostUserService {
             UserData userData = userDataRepository.findByUserId(connectedUser.getUserId());
 
             if (userData == null) {
-                throw new UserNotFoundException();
+                throw new UserFriendlyException("User not found");
             }
 
             userData.setDeviceId(connectedUser.getDeviceId());

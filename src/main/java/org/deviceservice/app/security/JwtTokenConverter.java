@@ -3,6 +3,7 @@ package org.deviceservice.app.security;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.deviceservice.app.domain.dto.UpdateUserDataDto;
+import org.deviceservice.app.exception.UserFriendlyException;
 import org.deviceservice.app.utility.OperationSystem;
 import org.deviceservice.app.utility.RoleData;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,7 +34,7 @@ public class JwtTokenConverter {
 
             return userDataDto;
         } catch (SecurityException e) {
-            throw new SecurityException();
+            throw new UserFriendlyException("token error");
         }
     }
 }

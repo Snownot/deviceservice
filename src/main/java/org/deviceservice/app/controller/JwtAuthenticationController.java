@@ -22,7 +22,7 @@ public class JwtAuthenticationController {
     @Resource(name = "getUserServiceImpl")
     private GetUserService getUserService;
 
-    @RequestMapping(value = "/connect", method = RequestMethod.POST)
+    @RequestMapping(value = "/connect", method = RequestMethod.HEAD)
     public ResponseEntity<?> connect() {
         return ResponseEntity.ok(SocketFlow.Status.OK);
     }
