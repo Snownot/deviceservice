@@ -12,5 +12,5 @@
 3. spring.datasource.URL-database connection
 4. SERVER_PORT-port
 5. auth.secret-secret key for jwt
-6. API: http://localhost:8585/api/getAllDataUser do update users data 
-7. API: http://localhost:8585/api/connect get all data if role is BACK-OFFICE
+6. API: http://localhost:8585/api/getAllDataUser get all data if role is BACK-OFFICE
+7. API: http://localhost:8585/api/connect updating users data
