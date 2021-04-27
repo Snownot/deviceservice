@@ -1,7 +1,5 @@
 package org.deviceservice.app.controller;
 
-
-
 import jdk.net.SocketFlow;
 import org.deviceservice.app.domain.dto.UserDataDto;
 import org.deviceservice.app.service.GetUserService;

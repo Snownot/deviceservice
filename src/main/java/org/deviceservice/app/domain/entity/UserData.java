@@ -5,7 +5,6 @@ import org.deviceservice.app.utility.OperationSystem;
 import org.deviceservice.app.utility.RoleData;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.UUID;
