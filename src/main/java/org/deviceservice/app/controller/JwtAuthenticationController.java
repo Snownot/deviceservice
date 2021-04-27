@@ -17,7 +17,7 @@ import java.util.List;
 @CrossOrigin
 public class JwtAuthenticationController {
 
-    @Resource(name = "getUserServiceImpl")
+    @Resource
     private GetUserService getUserService;
 
     @RequestMapping(value = "/connect", method = RequestMethod.HEAD)

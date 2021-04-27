@@ -21,11 +21,8 @@ import java.io.IOException;
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
 
-    @Resource(name = "postUserServiceImpl")
+    @Resource
     private PostUserService postUserService;
-
-    @Value("${auth.secret}")
-    private String secret;
 
     private final JwtTokenConverter jwtTokenUtil;
 

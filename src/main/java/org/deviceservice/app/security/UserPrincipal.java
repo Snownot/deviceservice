@@ -12,8 +12,8 @@ public class UserPrincipal implements UserDetails {
 
     private String username;
     private UUID id;
-    private Boolean isAdmin;
-    private boolean isDeleted;
+    private Boolean isExpired;
+
 
     private Collection<? extends GrantedAuthority> authorities;
     //TODO hardcoded password for nonPassword auth
@@ -29,17 +29,17 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return !isDeleted;
+        return !isExpired;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return !isDeleted;
+        return !isExpired;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return !isDeleted;
+        return !isExpired;
     }
 
     @Override
