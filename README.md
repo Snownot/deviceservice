@@ -3,7 +3,7 @@
 ** Build and run**
 
 1. Build the project: mvn clean package (a jar file is formed in the /target folder)
-2. Starting the jar: java-jar deviceservice-1.0-SNAPSHOT.jar
+2. Starting the jar: java -jar deviceservice-1.0-SNAPSHOT.jar
 
 ** Environment variables**
 
