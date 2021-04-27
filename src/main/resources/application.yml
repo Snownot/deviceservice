@@ -6,12 +6,18 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
-      hibernate:
-      ## SQL logging
-      #        show_sql: true
-      #        format_sql: false
+        hibernate:
+        # SQL logging
+#                show_sql: true
+#                format_sql: false
+  flyway:
+      user: sa
+      password: sa
+      url: jdbc:postgresql://localhost:5432/user_data
+      locations: classpath:db/migration
+      enabled: true
 
 server:
   port: ${SERVER_PORT:8585}
